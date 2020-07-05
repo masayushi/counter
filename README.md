@@ -14,7 +14,7 @@
 2.計數器 CDN
 
 ```
-<script src="https://masayushi.github.io/counter/counter.js></script>
+<script src="https://masayushi.github.io/counter/counter.js"></script>
 ```
 
 3.參數說明
