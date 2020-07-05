@@ -2,32 +2,47 @@
 $(document).ready(function () {
 
     // 當視窗捲動時
-    $(window).scroll(function () { 
-    
-        // var 變數 = 資料
-    var offset = $("#test").offset();    // 取得元素位移資料
-    var top = offset.top;               //上方
-    var left = offset.left;             //左方
+    $(window).scroll(function () {
 
-    // console.log("元素的上方：" + top);
+        $("*").each(function (index, element) {
+            // element == this 當下搜尋到的元素
 
-    var windowTop = $(window).scrollTop();
+            // var 變數 = 資料
+            var offset = $(this).offset();    // 取得元素位移資料
+            var top = offset.top;               //上方
+            var left = offset.left;             //左方
 
-    // console.log("視窗的上方：" + windowTop);
-    
-    // 判斷式
-    // 如果 發生...就會要有...的結果
-    // if ( 條件 ) { 程式 } 
-   if (windowTop > top) {
-    //    console.log("開始執行動畫...")
-            $("#test").animate({
-                num : 999   //數字
-            }, {
-                duration: 2000,  //時間
-                step: (now) => {                        //步驟
-                    $("#test").text(Math.floor(now));   //文字(步驟) - Math.floor() 去小數點
-                }
-            })
-        } 
+            // console.log("元素的上方：" + top);
+
+            var windowTop = $(window).scrollTop();
+
+            // console.log("視窗的上方：" + windowTop);
+
+            // 取得參數：數字、時間及位移
+            var number = $(this).attr("data-counter-number");
+            var time = $(this).attr("data-counter-time");
+            var offset = $(this).attr("data-counter-offset");
+
+            //console.log("數字：" + number);
+            //console.log("時間：" + time);
+            //console.log("位移：" + offset);
+
+
+            // 判斷式
+            // 如果 發生...就會要有...的結果
+            // if ( 條件 ) { 程式 } 
+            if (windowTop > top - offset) {
+                //    console.log("開始執行動畫...")
+                $(this).animate({
+                    num: number                //數字
+                }, {
+                    duration: parseInt(time),  //時間
+                    step: (now) => {                        //步驟
+                        $(this).text(Math.floor(now));   //文字(步驟) - Math.floor() 去小數點
+                    }
+                })
+            }
+        });
+
     });
 });
