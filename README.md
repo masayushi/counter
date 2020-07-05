@@ -1,7 +1,9 @@
 # counter
 計數器練習
 
+```
 展示網頁：https://masayushi.github.io/counter/
+```
 
 1.請先CDN jquery (jquery會更新  這點需要注意)
 
