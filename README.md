@@ -5,11 +5,15 @@
 
 1.請先CDN jquery (jquery會更新  這點需要注意)
 
+```
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+```
 
 2.計數器 CDN
 
+```
 <script src="https://masayushi.github.io/counter/counter.js></script>
+```
 
 3.參數說明
 
